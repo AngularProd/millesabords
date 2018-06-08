@@ -1,0 +1,28 @@
+<div class="container" style="padding-top: 40px; padding-bottom: 20px;">
+  <div id="overlay" *ngIf="loading;">
+    <div id="text">Chargement des boissons en cours...</div>
+  </div>
+
+  <div class="row" style="margin-bottom: 20px;">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-3">
+      <h2 id="hide-mobile">33cl</h2>
+    </div>
+    <div class="col-md-3">
+      <h2 id="hide-mobile">50cl</h2>
+    </div>
+  </div>
+
+  <div class="row aff_mobile" *ngFor="let i of products" style="margin-bottom: 20px;">
+    <div class="col-md-6">
+      <h2>{{i.nom | uppercase}}</h2>
+    </div>
+    <div class="col-md-3" id="list-prix">
+      <p id="prix_pm">{{i.pm}}</p>
+    </div>
+    <div class="col-md-3" id="list-prix">
+      <p id="prix_gm">{{i.gm}}</p>
+    </div>
+  </div>
+</div>

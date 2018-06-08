@@ -1,0 +1,12 @@
+.carte {
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #656328;
+    color: #4e5217;	
+}
+
+.carte:hover {
+	color: #bf7f09;
+	border: 1px solid #bf7f09;
+}

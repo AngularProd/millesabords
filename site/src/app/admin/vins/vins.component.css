@@ -1,0 +1,51 @@
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.bg-info {
+    background-color: #545d66 !important;
+}
+
+table td:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .action_mobile > a {
+        width: 70% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .action_mobile {
+        display: none;
+    }
+    .action_mobile_warning {
+        display: block !important;
+    }    
+}
+
+@media (min-width: 767px) {
+    .action_mobile_warning {
+        display: none !important;
+    }
+}

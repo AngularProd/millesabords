@@ -1,0 +1,15 @@
+<div class="container-fluid" style="padding-top: 40px; padding-bottom: 20px;">
+    <div id="overlay" *ngIf="!pizzasCharger;">
+        <div id="text">Chargement des pizza en cours...</div>
+    </div> 
+
+    <div class="row aff_mobile" *ngFor="let i of pizzas" style="margin-bottom: 20px;" >
+        <div class="col-md-10">
+            <h2>{{i.nom | uppercase}}</h2>
+            <p *ngIf="i.ingredient != '-'" >{{i.ingredient}}</p>
+        </div>
+        <div class="col-md-2" style="text-align: right;">
+            {{i.prix}}
+        </div>       
+    </div>
+</div>

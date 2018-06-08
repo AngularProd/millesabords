@@ -1,0 +1,110 @@
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li> 
+                	<a 
+                		class="waves-effect waves-dark" 
+                		routerLink="/admin"
+                		aria-expanded="false"
+                	>
+                		<i class="mdi mdi-gauge"></i><span class="hide-menu">Tableau de bord</span>
+                	</a>
+                </li>
+                <li> 
+                    <a 
+                        class="waves-effect waves-dark" 
+                        routerLink="/admin/utilisateur"
+                        aria-expanded="false"
+                    >
+                        <i class="mdi mdi-account-check"></i><span class="hide-menu">Profil</span>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a class="waves-effect waves-dark" routerLink="/admin/platdujour/liste" aria-expanded="false">
+                        <i class="mdi mdi-file-powerpoint-box"></i>
+                        <span class="hide-menu">Plat du jour</span>
+                    </a>
+                </li> -->
+                <li> 
+                    <a 
+                        class="waves-effect waves-dark" 
+                        routerLink="/admin/menu/liste"
+                        aria-expanded="false"
+                    >
+                        <i class="mdi mdi-bulletin-board"></i><span class="hide-menu">Entrée</span>
+                    </a>
+                </li>
+                <li> 
+                    <a 
+                        class="waves-effect waves-dark" 
+                        routerLink="/admin/plat/liste"
+                        aria-expanded="false"
+                    >
+                        <i class="mdi mdi-cards-playing-outline"></i><span class="hide-menu">Plat</span>
+                    </a>
+                </li>
+                <li> 
+                    <a 
+                        class="waves-effect waves-dark" 
+                        routerLink="/admin/pizza/liste"
+                        aria-expanded="false"
+                    >
+                        <i class="mdi mdi-cards-playing-outline"></i><span class="hide-menu">Pizza</span>
+                    </a>
+                </li>
+                <li> 
+                    <a 
+                        class="waves-effect waves-dark" 
+                        routerLink="/admin/dessert/liste"
+                        aria-expanded="false"
+                    >
+                        <i class="mdi mdi-beach"></i><span class="hide-menu">Dessert</span>
+                    </a>
+                </li>
+                <!-- <li> 
+                	<a 
+                		class="waves-effect waves-dark" 
+                		routerLink="/admin/boisson/liste"
+                		aria-expanded="false"
+                	>
+                		<i class="mdi mdi-beer"></i><span class="hide-menu">Boisson</span>
+                	</a>
+                </li>
+                <li> 
+                	<a 
+                		class="waves-effect waves-dark" 
+                		routerLink="/admin/vins/liste"
+                		aria-expanded="false"
+                	>
+                		<i class="mdi mdi-cup"></i><span class="hide-menu">Vins</span>
+                	</a>
+                </li> -->
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+    <!-- Bottom points-->
+    <div class="sidebar-footer">
+        <!-- 
+        <a href="" class="link" data-toggle="tooltip" title="Configuration">
+        	<i class="ti-settings"></i>
+        </a> 
+        <a href="" class="link" data-toggle="tooltip" title="Email">
+        	<i class="mdi mdi-gmail"></i>
+        </a>
+        -->
+        <a 
+            class="link" 
+            data-toggle="tooltip" 
+            title="Deconnexion"
+            (click)="deconnexion()"
+        >
+            <i class="mdi mdi-power"></i>
+        </a> 
+    </div>
+    <!-- End Bottom points-->
+</aside>

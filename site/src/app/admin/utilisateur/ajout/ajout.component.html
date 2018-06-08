@@ -1,0 +1,109 @@
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card">
+            <div class="card-block" style="text-align: center;">
+            		<img src="assets/images/profil.png" class="img-circle" width="150" />
+                    <h4 class="card-title m-t-10">Photo de profil</h4>
+                    <h6 class="card-subtitle">Glisser ici votre photo</h6>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <div class="card-block">
+                <form #utilisateurForm="ngForm" (ngSubmit)="onClickSubmit(utilisateurForm.value)" class="form-horizontal form-material">
+                	{{utilisateursCharger}}
+                    <div class="form-group">
+                        <label class="col-md-12">Pseudo</label>
+                        <div class="col-md-12">
+                            <input 
+                            	type="text" 
+                            	placeholder="Ex: John60" 
+                            	class="form-control form-control-line"
+                            	name="pseudo" 
+                            	ngModel
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="example-email" class="col-md-12">Email</label>
+                        <div class="col-md-12">
+                            <input 
+                            	type="email" 
+                            	placeholder="Ex: email@email.com" 
+                            	class="form-control form-control-line" 
+                            	name="email" 
+                            	ngModel
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Nom</label>
+                        <div class="col-md-12">
+                            <input 
+                            	type="text" 
+                            	placeholder="Ex: Johnathan" 
+                            	class="form-control form-control-line"
+                            	name="nom"
+                            	ngModel
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Prenom</label>
+                        <div class="col-md-12">
+                            <input 
+                            	type="text" 
+                            	placeholder="Ex: Micher" 
+                            	class="form-control form-control-line"
+                            	name="prenom"
+                            	ngModel
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Rôle</label>
+                        <div class="col-sm-12">
+                            <select 
+                            	class="form-control form-control-line"
+                            	name="role"
+                            	ngModel
+                            >
+                                <option value="Administrateur">Administrateur</option>
+                                <option value="Contributeur">Contributeur</option>
+                                <option value="Utilisateur">Utilisateur</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Mot de passe</label>
+                        <div class="col-md-12">
+                            <input 
+                            	type="password" 
+                            	placeholder="********" 
+                            	class="form-control form-control-line"
+                            	name="password" 
+                            	ngModel
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-success col-sm-4">Envoyer</button>
+                            <a 
+					            class="btn btn-warning col-sm-4"
+					            routerLink="/admin/utilisateur"
+					        >
+					        	Retour
+					    	</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>

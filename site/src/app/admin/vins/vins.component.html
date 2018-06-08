@@ -1,0 +1,170 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12 pull-left alert alert-warning action_mobile_warning hidden-sm-up">
+    <strong>Cliquer sur un nom de vin pour modifier ou suppimer</strong>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-4 pull-left">
+    <a class="btn waves-effect waves-light btn-primary pull-left " style="color: #fff; background: #0275d8 !important; border: 1px solid #0275d8;"
+      routerLink="/admin/ajoutvins">
+      Ajouter un nouveau vin
+    </a>
+  </div>
+</div>
+<br>
+
+<div class="row" *ngIf="added;">
+  <div class="col-md-12">
+    <div class="alert alert-success">
+      <strong>Un nouveau vin a été ajouté avec success!</strong>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="deleted;">
+  <div class="col-md-12">
+    <div class="alert alert-success">
+      <strong>Un vin a été supprimé avec success!</strong>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="updated;">
+  <div class="col-md-12">
+    <div class="alert alert-success">
+      <strong>Un vin a été modifié avec success!</strong>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-block bg-info">
+        <h4 class="text-white card-title">Liste des vins</h4>
+      </div>
+      <div class="card-block">
+        <div id="overlay" *ngIf="loading;">
+          <div id="text">Chargement des vins en cours...</div>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nom de la vin</th>
+                <th>33cl</th>
+                <th>50cl</th>
+                <th class="action_mobile">Action</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="listProduct">
+              <tr *ngFor="let data of listProduct">
+                <td (click)="ngxSmartModalService.getModal('modifierModal').open(); setCurrentProduct(data)">
+                  {{data.nom | uppercase}}
+                </td>
+                <td>{{data.pm}}</td>
+                <td>{{data.gm}}</td>
+                <td style="width: 25%;" class="action_mobile">
+                  <a class="btn waves-effect waves-light btn-primary pull-left " style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
+                    (click)="ngxSmartModalService.getModal('modifierModal').open(); setCurrentProduct(data)">
+                    Modifier
+                  </a>
+                  <a class="btn waves-effect waves-light btn-primary pull-left  dialog__close-btn ng-tns-c5-2 ng-star-inserted" style="color: #fff; background: red !important; border: 1px solid red;"
+                    (click)="ngxSmartModalService.getModal('myModal').open(); setCurrentProduct(data)">
+                    Supprimer
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+            <tbody *ngIf="!listProduct">
+              <tr>
+                <td colspan="4">
+                  Pas de vin
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngx-smart-modal #myModal identifier="myModal">
+  <div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Attention</h4>
+  </div>
+
+  <div class="modal-body">
+    <h3>Voulez vous vraiment supprimer ce vin ?</h3>
+  </div>
+
+  <div class="modal-footer">
+    <a type="button" class="btn btn-default" data-dismiss="modal" style="color: #fff; background: red !important;" (click)="deleteProduct(currentProduct);">
+      Supprimer
+    </a>
+    <button type="button" class="btn btn-primary" style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a;"
+      (click)="myModal.close()">
+      Annuler
+    </button>
+  </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #modifierModal identifier="modifierModal">
+  <div *ngIf="currentProduct">
+    <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">
+        Modification du vin {{currentProduct.nom}}
+      </h4>
+    </div>
+    <div class="modal-body">
+      <div class="table-responsive">
+        <form #dess="ngForm" (ngSubmit)="updateProduct(dess.value)">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  Nom du vin
+                </th>
+                <th>
+                  <input type="text" placeholder="Nom de la boisson" class="form-control form-control-line" name="nom" ngModel="{{currentProduct.nom}}">
+                </th>
+              </tr>
+              <tr>
+                <th>33cl</th>
+                <th>
+                  <input type="text" placeholder="Prix pour les 33cl" class="form-control form-control-line" name="pm" ngModel="{{currentProduct.pm}}">
+                </th>
+              </tr>
+              <tr>
+                <th>50cl</th>
+                <th>
+                  <input type="text" placeholder="Prix pour les 50cl" class="form-control form-control-line" name="gm" ngModel="{{currentProduct.gm}}">
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <a class="btn waves-effect waves-light btn-primary pull-left dialog__close-btn ng-tns-c5-2 ng-star-inserted action_mobile_warning"
+                    style="color: #fff; background: red !important; border: 1px solid red;" (click)="ngxSmartModalService.getModal('modifierModal').close(); ngxSmartModalService.getModal('myModal').open(); deleteProduct(currentProduct);">
+                    Supprimer
+                  </a>
+                </th>
+                <th>
+                  <input type="hidden" name="id" ngModel="{{currentProduct.id}}">
+                  <input type="submit" value="Modifier" class="btn waves-effect waves-light pull-left" style="color: #fff; background: #097912 !important; border: 1px solid #097912 !important; margin-right: 10px;">
+                  <a class="btn waves-effect waves-light pull-left" style="color: #fff; background: #f0a00e !important; border: 1px solid #d8aa02"
+                    (click)="modifierModal.close()">
+                    Annuler
+                  </a>
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!currentProduct">
+    Erreur sur la modification
+  </div>
+</ngx-smart-modal>

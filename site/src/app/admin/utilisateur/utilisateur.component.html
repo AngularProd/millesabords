@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12 pull-left">
+        <a 
+            class="btn ajouteruser waves-effect waves-light btn-primary pull-left"
+            routerLink="/admin/ajoututilisateur"
+        >
+            Ajouter un nouveau utilisateur
+        </a>   
+    </div>
+</div><br>
+<div class="row">
+    <!-- column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title" style="display: inline; color: #0275d8;">
+                	Listes de tous les utilisateurs
+            	</h4>
+                <hr>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Identifient</th>
+                                <th>Email</th>
+                                <th>Rôle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let utilisateur  of utilisateurs">
+                                <td>{{utilisateur.id}}</td>
+                                <td>{{utilisateur.pseudo}}</td>
+                                <td>{{utilisateur.email}}</td>
+                                <td>{{utilisateur.role}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,205 @@
+<div class="row">
+    <div 
+        class="col-md-12 col-sm-12 col-xs-12 pull-left alert alert-warning action_mobile_warning"
+    >
+        <strong>Cliquer sur un nom de dessert pour modifier ou suppimer</strong>
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-md-4 pull-left">
+        <a 
+            class="btn waves-effect waves-light btn-primary pull-left "
+            style="color: #fff; background: #0275d8 !important; border: 1px solid #0275d8;"
+            routerLink="/admin/ajoutdessert"
+        >
+            Ajouter un nouveau dessert
+        </a>    
+    </div>
+</div><br>
+
+<div class="row" *ngIf="insertOrList;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un nouveau dessert a été ajouté avec success!</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="deleted;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un dessert a été supprimé avec success!</strong>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="modified;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un dessert a été modifié avec success!</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-block bg-info">
+                <h4 class="text-white card-title">Liste des desserts</h4>
+            </div>            
+            <div class="card-block">
+                <div id="overlay" *ngIf="!dessertsCharger;">
+                    <div id="text">Chargement des desserts en cours...</div>
+                </div>               
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prix</th>
+                                <th class="action_mobile">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of desserts">
+                                <td (click)="ngxSmartModalService.getModal('modifierModal').open(); modifierDessert(data);">
+                                    {{data.nom | uppercase}}
+                                </td>
+                                <td>{{data.prix}}</td>
+                                <td style="width: 25%;" class="action_mobile">
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left "
+                                        style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
+                                        (click)="ngxSmartModalService.getModal('modifierModal').open(); modifierDessert(data);"
+                                    >
+                                        Modifier
+                                    </a>
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left  dialog__close-btn ng-tns-c5-2 ng-star-inserted"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"
+                                        (click)="ngxSmartModalService.getModal('myModal').open();supprimerDessert(data)"
+                                    >
+                                        Supprimer
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ngx-smart-modal #myModal identifier="myModal">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Attention</h4>
+    </div>
+
+    <div class="modal-body">
+        <h3>Voulez vous vraiment supprimer ce dessert ?</h3>
+    </div>
+
+    <div class="modal-footer">
+        <a 
+            type="button"
+            class="btn btn-default" 
+            data-dismiss="modal"
+            style="color: #fff; background: red !important;"
+            routerLink="/admin/deletedessert/{{idDessertTodelete}}" 
+        >
+            Supprimer
+        </a>
+        <button 
+            type="button"
+            class="btn btn-primary"
+            style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a;" 
+            (click)="myModal.close()"
+        >
+            Annuler
+        </button>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #modifierModal identifier="modifierModal">
+    <div *ngIf="dessertToModifier">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+                Modification du dessert {{dessertToModifier.nom}}
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="table-responsive">
+                <form #dess="ngForm" (ngSubmit)="onClickSubmit(dess.value)" method="PUT">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nom du dessert
+                                </th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Nom de la boisson" 
+                                        class="form-control form-control-line"
+                                        name="nom"
+                                        ngModel="{{dessertToModifier.nom}}"
+                                    >
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Prix</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Prix" 
+                                        class="form-control form-control-line"
+                                        name="prix"
+                                        ngModel="{{dessertToModifier.prix}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                                    <input 
+                                        type="hidden" 
+                                        placeholder="ingredient" 
+                                        class="form-control form-control-line"
+                                        name="ingredient"
+                                        ngModel="{{dessertToModifier.ingredient}}"
+                                    >                                   
+                            <tr>
+                                <th>
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left dialog__close-btn ng-tns-c5-2 ng-star-inserted action_mobile_warning"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"                                        
+                                        (click)="ngxSmartModalService.getModal('modifierModal').close(); ngxSmartModalService.getModal('myModal').open(); supprimerDessert(dessertToModifier);"
+                                    >
+                                        Supprimer
+                                    </a>                                    
+                                </th>
+                                <th>
+                                    <input 
+                                        type="hidden"
+                                        name="id"
+                                        ngModel="{{dessertToModifier.id}}"
+                                    >
+                                    <input 
+                                        type="submit" 
+                                        value="Modifier"
+                                        class="btn waves-effect waves-light pull-left "
+                                        style="color: #fff; background: #097912 !important; border: 1px solid #097912 !important; margin-right: 10px;"
+                                    >
+                                    <a 
+                                        class="btn waves-effect waves-light pull-left "
+                                        style="color: #fff; background: #f0a00e !important; border: 1px solid #d8aa02"
+                                        (click)="modifierModal.close()"
+                                    >
+                                        Annuler
+                                    </a>                                    
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </form>
+            </div>            
+        </div>
+    </div>
+</ngx-smart-modal>

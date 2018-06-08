@@ -1,0 +1,24 @@
+agm-map {
+  height: 400px;
+}
+
+.font_4 {
+    font: normal normal normal 84px/1.4em 'playfair display',serif;
+    color: #2F2E2E;
+}
+
+.font_9 {
+    font: normal normal normal 19px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+}
+
+@media screen and (max-width: 419px) 
+{
+	.font_4 {
+    font: normal normal normal 60px/1.4em 'playfair display',serif;
+    color: #2F2E2E;
+	}
+
+	.font_9 {
+    font: normal normal normal 15px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+	}
+}

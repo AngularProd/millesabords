@@ -1,0 +1,48 @@
+<form #desr="ngForm" (ngSubmit)="saveProduct(desr.value)">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Formulaire d'ajout de nouveau Vin</h4>
+          <hr>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>
+                    <input type="text" placeholder="Nom du Vin" class="form-control form-control-line" name="nom" ngModel>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Prix pour les 33cl</th>
+                  <th>
+                    <input type="text" placeholder="33cl" class="form-control form-control-line" name="pm" ngModel>
+                  </th>
+                </tr>
+                <tr>
+                  <th>Prix pour les 50cl</th>
+                  <th>
+                    <input type="text" placeholder="50cl" class="form-control form-control-line" name="gm" ngModel>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                  </th>
+                  <th>
+                    <input type="submit" value="Ajouter" class="btn waves-effect waves-light pull-left" style="color: #fff; background: #097912 !important; border: 1px solid #097912 !important; margin-right: 10px;">
+                    <a class="btn waves-effect waves-light pull-left" style="color: #fff; background: #f0a00e !important; border: 1px solid #d8aa02"
+                      routerLink="/admin/vins/liste">
+                      Annuler
+                    </a>
+                  </th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

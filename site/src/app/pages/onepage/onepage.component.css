@@ -1,0 +1,332 @@
+/* Styles go here */
+.menu {
+    height: 60px;
+    background: #fff;
+    padding-top: 15px;
+    z-index: 9999;
+    width: 100%;
+    position: fixed;
+    border-bottom: 0.5px solid #dcd3d3;
+}
+
+.menu a {
+    cursor: pointer;
+    color: #000;
+}
+
+.menu a:hover {
+    cursor: pointer;
+    color: #A0A09F;
+}
+
+#content {
+    /*padding-top: 60px; */
+}
+
+#home {
+    padding-top: 60px;
+}
+
+#presentation {
+    padding-top: 60px;
+}
+
+#menu {
+    padding-top: 60px;
+}
+
+
+.parallax-entrees {
+    background: url('nos_entrees_1.jpg') no-repeat center center fixed;
+    height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.parallax-plats {
+    background: url('nos_plats.jpg') no-repeat center center fixed;
+    height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;     
+}
+ 
+.parallax-desserts {
+    background: url('nos_desserts.jpg') no-repeat center center fixed;
+    height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.parallax-boissons {
+    background: url('nos_boissons.jpg') no-repeat center center fixed;
+    height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+.parallax-pizza {
+    background: url('pizza_denicollo.jpg') no-repeat center center fixed;
+    height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.parallax-platdujour {
+    background: url('platdujour.jpg') no-repeat center center fixed;
+    height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+#contact {
+    padding-top: 60px;
+}
+
+/*Pour la section accueil*/
+.txtNew {
+    word-wrap: break-word;
+    text-align: start;
+    pointer-events: none;
+}
+
+.txtNew h3 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.color_32 {
+    color: #FFC880;
+}
+
+.font_3 {
+    font: normal normal normal 58px/1.4em impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+    color: #222222;
+}
+
+
+.font_4 {
+    font: normal normal normal 68px 'playfair display',serif;
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+    font-style: italic;
+}
+
+
+#menu-mobile .navbar-nav li {
+    border: none !important;
+}
+
+#comp-itb5kbcnlink{
+    margin-left: 3px !important;
+}
+@media screen and (min-width: 1200px) 
+{
+  #menu-bureau-small{
+    display: none !important;
+  }
+
+  #menu-tablet{
+   display: none !important;
+  }
+   #menu-mobile{
+   display: none  !important;
+  }
+  #menu-tablet-min{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1053px)
+{
+  #menu-bureau{
+    display: none !important;
+  }
+   #menu-bureau-small{
+    display: block !important;
+  }
+  #menu-tablet{
+   display: none !important;
+  }
+  #menu-tablet-min{
+    display: none !important;
+  }
+   #menu-mobile{
+   display: none  !important;
+  }
+}
+@media screen and (max-width: 1052px) and (min-width: 921px)
+{
+    .font_4{
+    font: normal normal normal 73px/1.4em 'playfair display',serif;
+
+    }
+  #menu-bureau{
+    display: none !important;
+  }
+   #menu-bureau-small{
+    display: none !important;
+  }
+  #menu-tablet{
+   display: block  !important;
+  }
+  #menu-tablet-min{
+    display: none !important;
+  }
+   #menu-mobile{
+   display: none  !important;
+  }
+  
+}
+@media screen and (max-width: 920px) and (min-width: 769px)
+{
+    .font_4{
+    font: normal normal normal 68px/1.4em 'playfair display',serif;
+
+    }
+    #comp-itb5kbcnlink{
+   margin-left: -25px !important;
+    }
+  #menu-bureau{
+    display: none !important;
+  }
+   #menu-bureau-small{
+    display: none !important;
+  }
+  #menu-tablet{
+   display: none  !important;
+  }
+  #menu-tablet-min{
+    display: block  !important;
+  }
+   #menu-mobile{
+   display: none  !important;
+  }
+  
+  
+}
+@media screen and (max-width: 768px)
+{
+    
+    .font_4{
+    font: normal normal normal 57px/1.4em 'playfair display',serif;
+
+    }
+  #menu-bureau{
+    display: none !important;
+  }
+   #menu-bureau-small{
+    display: none !important;
+  }
+  #menu-tablet{
+   display: none  !important;
+  }
+  #menu-tablet-min{
+    display: none !important;
+  }
+  #menu-mobile{
+   display: block  !important;
+  }
+  
+}
+
+
+
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:  transparent;
+  color: #A0A09F;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/*Fin pour la section accueil*/
+.hide-content{
+  display: none;
+  transition: all 1s ease-out;
+}
+.tabs .tab{
+  transition: all 1s ease-out;
+  animation: hideandshow 0.8s;
+}
+.tabMenu{
+  color: black;
+  font-size: 36px;
+}
+.tabMenu .tabMenuList{
+  display: inline-block;
+  list-style: none;
+  padding: 8px 100px 5px 2px;;
+  cursor: pointer;
+  animation: hideandshow 0.8s;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+.current{
+  border-bottom: 1px solid rgba(153, 153, 153, 1) !important;
+}
+@keyframes hideandshow{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

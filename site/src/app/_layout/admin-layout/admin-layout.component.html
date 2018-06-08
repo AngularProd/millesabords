@@ -1,0 +1,45 @@
+<div id="main-wrapper">
+	<admin-header></admin-header>
+	<admin-sidebar></admin-sidebar>
+
+	<div class="page-wrapper">
+	    <!-- ============================================================== -->
+	    <!-- Container fluid  -->
+	    <!-- ============================================================== -->
+	    <div class="container-fluid">
+	        <!-- ============================================================== -->
+	        <!-- Bread crumb and right sidebar toggle -->
+	        <!-- ============================================================== -->
+	        <div class="row page-titles">
+	            <div class="col-md-5 col-8 align-self-center">
+	                <h3 class="text-themecolor">Tableau de bord</h3>
+	                <ol class="breadcrumb">
+	                    <li class="breadcrumb-item"><a href="javascript:void(0)">Accueil</a></li>
+	                    <li class="breadcrumb-item active">Tableau de bord</li>
+	                </ol>
+	            </div>
+	        </div>	
+		
+			<router-outlet></router-outlet>
+
+	    </div>
+	    <!-- ============================================================== -->
+	    <!-- End Container fluid  -->
+	    <!-- ============================================================== -->
+	    <!-- ============================================================== -->
+	    <!-- footer -->
+	    <!-- ============================================================== -->
+	    <!-- <footer class="footer">
+			<p style="text-align: center;">
+				<a href="https://www.kook-agency.fr/" target="blank"> 
+					© {{currentYear}} KOOK AGENCY 
+				</a>
+				<a routerLink="/admin/dashboard"> Ma carte </a>
+			</p>	    	
+	    </footer> -->
+	    <!-- ============================================================== -->
+	    <!-- End footer -->
+	    <!-- ============================================================== -->
+	</div>	
+
+</div>

@@ -1,0 +1,11 @@
+tbody tr:hover {
+	cursor: pointer;
+}
+
+.ajouteruser {
+	color: #fff; 
+	background: #0275d8 !important; 
+	border: 1px solid #0275d8;
+	position: relative; 
+	bottom: 10px;	
+}

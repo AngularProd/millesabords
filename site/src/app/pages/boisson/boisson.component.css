@@ -1,0 +1,64 @@
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+    display: block;
+}
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+#show-mobile{
+    display: none !important;
+}
+
+@media screen and (min-width: 768px)
+{
+    #prix_pm{
+    margin-left: 0%;
+ }
+ #prix_gm{
+    margin-left: 0%;
+ }
+}
+@media screen and (max-width: 767px) 
+{
+      #hide-mobile{
+        display: none !important;
+      }
+
+     #show-mobile{
+        display: block !important;
+     }
+     #list-prix{
+         display: inline-flex !important;
+     }
+     #prix_pm{
+        margin-left: 68%;
+        position: absolute;
+     }
+     #prix_gm{
+        margin-left: 68%;
+        position: absolute;
+     }
+    .aff_mobile {
+        border: 1px solid #a7ada7;
+        margin-right: 1px;
+        margin-bottom: 2px;
+        margin-left: 1px;
+    }  
+}

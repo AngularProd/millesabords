@@ -1,0 +1,234 @@
+.bandeaurose {
+    background: #ebc9af;
+    text-align: center;
+    height: 50px;
+}
+
+div.bandeaurose > p {
+    padding-top: 13px;
+    font-family: unset;
+    letter-spacing: 2pt;
+}
+
+.commander {
+    text-transform: uppercase;
+    height: 40px;
+    border: 1px solid;
+    width: 150px;
+    margin: auto;
+    padding-top: 6px;
+    cursor: pointer;	
+}
+
+.commander:hover {
+	background: black;
+	color: white;
+}
+
+.strc1 {
+	position: absolute; 
+	top: 0px; 
+	width: calc((((100vw - 15px) - 0px) * 1) + 1px); 
+	height: 100%; 
+	pointer-events: auto; l
+	eft: calc((((((100vw - 15px) - 0px) * 1) - 980px) * -0.5) - 1px); 
+	bottom: 0px; 
+	overflow: hidden; clip: rect(0px 1299px 50px 0px);	
+}
+
+.strc2 {
+	width: 100%; 
+	height: 100%; 
+	background-color: rgb(235, 201, 175); 
+	position: absolute;
+}
+
+.strc3 {
+	position: absolute; 
+	width: 980px; 
+	top: 0px; 
+	bottom: 0px; 
+	left: calc((100% - 980px) * 0.5);	
+}
+
+.txtNew p {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.font_9 {
+    font: normal normal normal 19px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    color: #605E5E;
+}
+
+.color_15 {
+    color: #2F2E2E;
+}
+
+.txtNew > * {
+    pointer-events: auto;
+}
+
+.txtNew {
+    word-wrap: break-word;
+    text-align: start;
+    pointer-events: none;
+}
+
+.txtNew h3 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.content_text {
+    position: relative;
+    top: 90px;    
+}
+
+.font_3 {
+    font: normal normal normal 170px/1.4em 'playfair display',serif;
+    color: #2F2E2E;   
+}
+
+.resto {
+    font: normal normal normal 25px/1.4em avenir-lt-w01_35-light1475496,sans-serif; 
+    text-align: center; 
+    color: #fff;
+    font-size: 30px;
+}
+
+.carte {
+    width: 10%;
+    text-align: center;
+    margin: auto;
+    background-color: #ebc9af;
+    font-size: 20px;
+    height: 40px;
+    cursor: pointer;
+    padding-top: 2px;
+}
+
+.carte:hover {
+    background-color: #d6915d;
+    color: #000 !important;
+}
+
+.parallax-home {
+    background: url('slide_resize.jpg') no-repeat center center fixed;;
+    height: 600px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1053px)
+{
+    .font_3 {
+    font: normal normal normal 140px/1.4em 'playfair display',serif;
+    color: #2F2E2E;   
+    }
+    .resto {
+   
+    font-size: 27px;
+ }
+}
+
+@media screen and (max-width: 1052px) and (min-width: 921px)
+{
+  .font_3 {
+    font: normal normal normal 121px/1.4em 'playfair display',serif;
+    color: #2F2E2E;   
+    } 
+    .resto {
+   
+    font-size: 25px;
+ }
+}
+   
+
+@media screen and (max-width: 920px) and (min-width: 769px)
+{
+    .font_3 {
+    font: normal normal normal 105px/1.4em 'playfair display',serif;
+    color: #2F2E2E;   
+    } 
+    div.bandeaurose > p {
+    padding-top: 2px !important;
+    font-family: unset;
+    letter-spacing: 2pt;
+  }
+  .resto {
+   
+    font-size: 23px;
+ }
+ .carte{
+    width: 14%;
+ }
+}
+@media screen and (max-width: 768px)  and (min-width: 604px) 
+{
+    .font_3 {
+    font: normal normal normal 98px/1.4em 'playfair display',serif;
+    color: #2F2E2E;   
+    } 
+       div.bandeaurose > p {
+        padding-top: 20px !important;
+        font-size: small;
+        font-family: unset;
+        letter-spacing: 2pt;
+     }
+      div.bandeaurose {
+        height: 66px !important;
+     }
+     .resto {
+   
+    font-size: 22px;
+    }
+    .carte{
+    width: 17%;
+ }
+  
+}
+
+@media screen and (max-width: 603px) 
+{
+    .font_3 {
+    font: normal normal normal 64px/1.4em 'playfair display',serif;
+    color: #2F2E2E;   
+    } 
+    div.bandeaurose > p {
+    padding-top: 16px !important;
+    font-size: small;
+    font-family: unset;
+    letter-spacing: 2pt;
+ }
+  div.bandeaurose {
+    height: 72px !important;
+ }
+   .resto {
+   
+    font-size: 20px;
+    }
+    .carte{
+    width: 29%;
+ }
+  
+}
+@media  screen and(max-width: 480px) and (min-width: 410px) {
+     .carte{
+    width: 22%;
+ }
+}
+@media  screen and(max-width: 409px) and (min-width: 341px) {
+     .carte{
+    width: 24%;
+ }
+}
+@media  screen and(max-width: 340px) {
+     .carte{
+    width: 29%;
+ }
+}

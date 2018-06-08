@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">  
+        <div class="col-md-12" style="margin: auto;">
+            <alert></alert>
+
+            <div style="margin-top: 50px;">
+                <div class="content">
+                    <div id="form_wrapper" class="form_wrapper">
+                        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                            <h3>Connexion</h3>
+                            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !pseudo.valid }" >
+                                <label>Pseudo</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    name="pseudo" 
+                                    [(ngModel)]="model.pseudo" #pseudo="ngModel" 
+                                    required 
+                                    placeholder="Entrer votre pseudo"
+                                />
+                                <div 
+                                    *ngIf="f.submitted && !pseudo.valid" 
+                                    class="help-block"
+                                >
+                                    Le champs pseudo est obligatoire
+                                </div>
+                            </div>
+                            <div [ngClass]="{ 'has-error': f.submitted && !password.valid }"
+                            >
+                                <label>Password</label>
+                                <input 
+                                    type="password" 
+                                    class="form-control" 
+                                    name="password" 
+                                    [(ngModel)]="model.password" #password="ngModel"
+                                    required 
+                                    placeholder="Entrer votre mot de passe"
+                                />
+                                <div *ngIf="f.submitted && !password.valid" class="help-block">
+                                    Le champs mot de passe est obligatoire
+                                </div>
+                            </div>                
+                            <div class="bottom">
+                                <input type="submit" value="Envoyer" />
+                                <a [routerLink]="['/']" class="linkform">
+                                    Revenir sur le site
+                                </a>
+                                <div class="clear"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,122 @@
+AppBundle\Entity\Boissonr4:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        pm:
+            - NotBlank: ~
+            - Type: string
+        gm:
+            - NotBlank: ~
+            - Type: string
+
+AppBundle\Entity\Vins4:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        pm:
+            - NotBlank: ~
+            - Type: string
+        gm:
+            - NotBlank: ~
+            - Type: string
+
+AppBundle\Entity\Utilisateurs:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: pseudo
+    properties:
+        pseudo:
+            - NotBlank: ~
+            - Type: string
+        nom:
+            - NotBlank: ~
+            - Type: string
+        prenom:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        password:
+            - NotBlank: ~
+            - Type: string
+        role:
+            - NotBlank: ~
+            - Type: string
+
+AppBundle\Entity\Dessert4:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        prix:
+            - NotBlank: ~
+            - Type: string
+        ingredient:
+            - NotBlank: ~
+            - Type: string
+
+AppBundle\Entity\Menu4:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        prix:
+            - NotBlank: ~
+            - Type: string
+        ingredient:
+            - NotBlank: ~
+            - Type: string
+
+AppBundle\Entity\Platdujour4:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        prix:
+            - NotBlank: ~
+            - Type: string
+        ingredient:
+            - NotBlank: ~
+            - Type: string
+
+AppBundle\Entity\Boissonr4:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        pm:
+            - NotBlank: ~
+            - Type: string
+        gm:
+            - NotBlank: ~
+            - Type: string
+
+AppBundle\Entity\Pizza4:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        pm:
+            - NotBlank: ~
+            - Type: string
+        gm:
+            - NotBlank: ~
+            - Type: string
+        ingredient:
+            - NotBlank: ~
+            - Type: string            

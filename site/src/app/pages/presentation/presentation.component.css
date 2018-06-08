@@ -1,0 +1,43 @@
+.font_4 {
+    font: normal normal normal 84px/1.4em 'playfair display',serif;
+    color: #2F2E2E;
+}
+
+.txtNew {
+    word-wrap: break-word;
+    text-align: start;
+    pointer-events: none;
+}
+
+.font_8 {
+    font: normal normal bold 23px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: bold;
+    font-stretch: normal;
+    font-size: 23px;
+    line-height: 1.4em;
+    font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+    color: #2F2E2E;
+}
+
+.txtNew p {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+@media screen and (max-width: 768px) and (min-width: 415px)
+{
+  #font-mobile {
+    font-size: 57px !important;
+  }
+}
+@media screen and (max-width: 414px)
+{
+  #font-mobile {
+    font-size: 47px !important;
+  }
+}
