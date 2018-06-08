@@ -550,7 +550,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "#contenu {\n\tcolor: #fff;\n\theight: 310px;\n}", ""]);
 
 // exports
 
@@ -563,7 +563,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  Bienvenu sur l'administration.\n</p>\n<p>\n\tCliquer sur les menus à gauche pour ajouter ou regarder la liste des plats ou menus.\n</p>\n"
+module.exports = "<div id=\"contenu\">\n\t<p>\n\t  Bienvenu sur l'administration.\n\t</p>\n\t<p>\n\t\tCliquer sur les menus à gauche pour ajouter ou regarder la liste des plats ou menus.\n\t</p>\n</div>\n"
 
 /***/ }),
 
