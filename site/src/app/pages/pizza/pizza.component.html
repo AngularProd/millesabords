@@ -4,7 +4,7 @@
     </div> 
 
     <div class="row aff_mobile" *ngFor="let i of pizzas" style="margin-bottom: 20px;" >
-        <div class="col-md-10">
+        <div class="col-md-10 titre_menu_mobile">
             <h2>{{i.nom | uppercase}}</h2>
             <p *ngIf="i.ingredient != '-'" >{{i.ingredient}}</p>
         </div>

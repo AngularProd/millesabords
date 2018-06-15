@@ -339,3 +339,9 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 920px) {
+    .titre_menu_carte {
+        font-size: 30px !important;       
+    }  
+}
