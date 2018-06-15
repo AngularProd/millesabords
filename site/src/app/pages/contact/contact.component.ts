@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-	lat: number = 42.577;
-	lng: number = 8.835;
+	lat: number = 42.6030003;
+	lng: number = 8.8269004;
+	zoom: number = 15;
 
 	constructor() { }
 

@@ -89,6 +89,15 @@
     background-size: cover;    
 }
 
+.parallax-presentation {
+    background: url('presentation.jpg') no-repeat center center fixed;
+    height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
 #contact {
     padding-top: 60px;
 }
