@@ -90,6 +90,16 @@
 
 /*-- mobile css --*/
 @media screen and (max-width: 768px) {
+  .block-menu {
+    padding: 0 5%;
+  }
+  .block-menu-container {
+    border: 1px solid #99abb4;
+    border-radius: 6px;
+    margin: 35px 0;
+    background: #795548;
+    box-shadow: 0 0 6px #5a5656;
+  }
   .menu-details {
     border: 1px solid rgba(185, 185, 185, 0.75) !important;
     background-color: rgba(222, 222, 222, 0.6313725490196078) !important;
@@ -156,6 +166,8 @@
   }
   [class*="parallax-"] h4 {
     font-size: 50px !important;
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
   }
 }
 /*-- parallax global css END--*/
