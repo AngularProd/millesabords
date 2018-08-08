@@ -86,14 +86,15 @@
                     </table>
                 </div>
             </div>
+            <div class="card-block bg-info">
+                <ul class="paginate-ul d-flex">
+                    <li class="paginate-li" (click)="pagination(page_current - 1)"><i class="mdi mdi-step-backward"></i></li>
+                    <li class="paginate-li{{ page_current == page ? ' current' : '' }}" *ngFor="let page of paginate" (click)="pagination(page)">{{page}}</li>
+                    <li class="paginate-li" (click)="pagination(page_current + 1)"><i class="mdi mdi-step-forward"></i></li>
+                </ul>
+            </div> 
         </div>
     </div>
-</div>
-
-<div class="paginate" *ngIf="paginate">
-    <ul *ngFor="let page of paginate">
-        <li (click)="pagination(page)">{{page}}</li>
-    </ul>
 </div>
 
 <ngx-smart-modal #myModal identifier="myModal">

@@ -20,6 +20,7 @@ export class PizzaComponent implements OnInit {
 	pizzaCharger = false;
 	pizzaToModifier = false;
 	paginate:Array<number>;
+	page_current:number;
 
 	headers: Headers;
     options: RequestOptions;	
@@ -38,22 +39,7 @@ export class PizzaComponent implements OnInit {
 
 		let url = urlApi + '/pizza';
 
-		this.http.get(url)
-			.map(
-				(response) => response.json()
-			)
-			.subscribe(
-				(data) => {
-					this.pizzas = data.contain;
-					this.pizzaCharger = (data.contain.length > 0) ? true : false;
-					let page = [];
-					for (var i = 1; i <= Math.ceil(data.count / 5); ++i) {
-						page.push(i);
-					}
-					this.paginate = page;
-					console.log(data, page, this.paginate);
-				}
-			)  	
+		this.pagination(1);
 	}
 
 	/**
@@ -63,10 +49,12 @@ export class PizzaComponent implements OnInit {
 	 *
 	 * @return void
 	*/
-	pagination(page:number) {
+	pagination(page_param:number) {
 		let limits:number = 5;
 		this.pizzaCharger = false;
-		this.http.get(urlApi + '/pizza/' + page + "/" + limits)
+		this.page_current = page_param;
+		page_param = page_param > 0 ? page_param : this.page_current;
+		this.http.get(urlApi + '/pizza/' + page_param + "/" + limits)
 			.map(
 				(response) => response.json()
 			)
@@ -75,7 +63,8 @@ export class PizzaComponent implements OnInit {
 					this.pizzas = data.contain;
 					this.pizzaCharger = (data.contain.length > 0) ? true : false;
 					let page = [];
-					for (var i = 1; i <= Math.ceil(data.count / limits); ++i) {
+					let max = Math.ceil(data.count / limits);
+					for (var i = 1; i <= max; ++i) {
 						page.push(i);
 					}
 					this.paginate = page;
