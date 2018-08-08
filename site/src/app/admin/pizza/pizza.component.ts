@@ -15,10 +15,11 @@ export class PizzaComponent implements OnInit {
 	pizzas;
 	insertOrList;
 	deleted;
-	modified
+	modified;
 	idPizzaTodelete;
 	pizzaCharger = false;
 	pizzaToModifier = false;
+	paginate:Array<number>;
 
 	headers: Headers;
     options: RequestOptions;	
@@ -43,8 +44,42 @@ export class PizzaComponent implements OnInit {
 			)
 			.subscribe(
 				(data) => {
-					this.pizzas = data;
-					this.pizzaCharger = (data.length > 0) ? true : false;
+					this.pizzas = data.contain;
+					this.pizzaCharger = (data.contain.length > 0) ? true : false;
+					let page = [];
+					for (var i = 1; i <= Math.ceil(data.count / 5); ++i) {
+						page.push(i);
+					}
+					this.paginate = page;
+					console.log(data, page, this.paginate);
+				}
+			)  	
+	}
+
+	/**
+	 * Pagination request
+	 *
+	 * @param page offset from where to show
+	 *
+	 * @return void
+	*/
+	pagination(page:number) {
+		let limits:number = 5;
+		this.pizzaCharger = false;
+		this.http.get(urlApi + '/pizza/' + page + "/" + limits)
+			.map(
+				(response) => response.json()
+			)
+			.subscribe(
+				(data) => {
+					this.pizzas = data.contain;
+					this.pizzaCharger = (data.contain.length > 0) ? true : false;
+					let page = [];
+					for (var i = 1; i <= Math.ceil(data.count / limits); ++i) {
+						page.push(i);
+					}
+					this.paginate = page;
+					console.log(data, page, this.paginate);
 				}
 			)  	
 	}

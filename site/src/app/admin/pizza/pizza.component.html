@@ -90,6 +90,12 @@
     </div>
 </div>
 
+<div class="paginate" *ngIf="paginate">
+    <ul *ngFor="let page of paginate">
+        <li (click)="pagination(page)">{{page}}</li>
+    </ul>
+</div>
+
 <ngx-smart-modal #myModal identifier="myModal">
     <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Attention</h4>
