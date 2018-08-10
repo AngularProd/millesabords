@@ -3,13 +3,16 @@
         <div id="text">Chargement des pizza en cours...</div>
     </div> 
 
-    <div class="row aff_mobile" *ngFor="let i of pizzas" style="margin-bottom: 20px;" >
+    <div class="row aff_mobile menu-details" *ngFor="let i of pizzas" style="margin-bottom: 20px;" >
         <div class="col-md-10 titre_menu_mobile">
-            <h2>{{i.nom | uppercase}}</h2>
+            <div class="title d-flex">
+                <h2>{{i.nom | uppercase}}</h2>
+                <h2 class="price-detail hidden-md-up">{{i.pm}}</h2>
+            </div>
             <p *ngIf="i.ingredient != '-'" >{{i.ingredient}}</p>
         </div>
-        <div class="col-md-2" style="text-align: right;">
+        <div class="col-md-2 hidden-md-down" style="text-align: right;">
             {{i.pm}}
-        </div>       
+        </div>
     </div>
 </div>

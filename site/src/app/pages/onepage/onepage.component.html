@@ -386,33 +386,49 @@
 	</div>
 	
 	<div id="menu">
-		<div parallax class="parallax-entrees" [config]="{axis: X, speed: -.0}">
-			<h4 class="font_4 titre_menu_carte" style="font-size: 40px;">
-				Carte ardoise "Mille Sabords" de notre Chef Christophe Lefebvre et son équipe.
-			</h4>
+		<div class="block-menu">
+			<div class="block-menu-container">
+				<div parallax class="parallax-entrees" [config]="{axis: X, speed: -.0}">
+					<h4 class="font_4 titre_menu_carte" style="font-size: 40px;">
+					C	arte ardoise "Mille Sabords" de notre Chef Christophe Lefebvre et 	son équipe.
+					</h4>
+				</div>
+				<app-menu></app-menu>
+			</div>
 		</div>
-		<app-menu></app-menu>
 
-		<div parallax class="parallax-plats" [config]="{axis: X, speed: -.0}">
-			<h4 class="font_4 titre_menu_carte">
-				Nos plats
-			</h4>
-		</div>		
-		<app-plat></app-plat>
+		<div class="block-menu">
+			<div class="block-menu-container">
+				<div parallax class="parallax-plats" [config]="{axis: X, speed: -.0}">
+					<h4 class="font_4 titre_menu_carte">
+						Nos plats
+					</h4>
+				</div>		
+				<app-plat></app-plat>
+			</div>
+		</div>
 
-		<div parallax class="parallax-pizza" [config]="{axis: X, speed: -.0}">
-			<h4 class="font_4 titre_menu_carte">
-				Les Pizzas de Niccolo
-			</h4>
+		<div class="block-menu">
+			<div class="block-menu-container">
+				<div parallax class="parallax-pizza" [config]="{axis: X, speed: -.0}">
+					<h4 class="font_4 titre_menu_carte">
+						Les Pizzas de Niccolo
+					</h4>
+				</div>	
+				<app-pizza></app-pizza>
+			</div>
+		</div>
+
+		<div class="block-menu">
+			<div class="block-menu-container">
+				<div parallax class="parallax-desserts" [config]="{axis: X, speed: -.0}">
+					<h4 class="font_4 titre_menu_carte">
+						Les Desserts de Maria
+					</h4>
+				</div>	
+				<app-dessert></app-dessert>
+			</div>
 		</div>	
-		<app-pizza></app-pizza>	
-
-		<div parallax class="parallax-desserts" [config]="{axis: X, speed: -.0}">
-			<h4 class="font_4 titre_menu_carte">
-				Les Desserts de Maria
-			</h4>
-		</div>	
-		<app-dessert></app-dessert>	
 
 		<!-- <div parallax class="parallax-boissons" [config]="{axis: X, speed: -.0}">
 			<h4 class="font_4">
@@ -462,14 +478,7 @@
 			"
 		>
 		<div>
-			<h4 		
-				style="
-					text-align: center; font-family: belinda-w00-regular,script;
-				    font-size: 37px;
-				    line-height: 1.6em;
-				    font-weight: 400;
-				"
-				>
+			<h4 class="representation">
 				''Nous vous proposons d'animer vos <br>Anniversaires ,Brunch, Mariage, Baptême,<br>Soirées privées,Événements, Salon...''
 			</h4>
 		</div>
