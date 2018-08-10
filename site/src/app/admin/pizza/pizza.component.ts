@@ -19,8 +19,13 @@ export class PizzaComponent implements OnInit {
 	idPizzaTodelete;
 	pizzaCharger = false;
 	pizzaToModifier = false;
+	paginate_show:boolean = false;
 	paginate:Array<number>;
-	page_current:number;
+	page_current:number = 0;
+	p_prev:number;
+	p_next:number;
+	max_page:number = 2;
+	limits:number = 5;
 
 	headers: Headers;
     options: RequestOptions;	
@@ -49,12 +54,24 @@ export class PizzaComponent implements OnInit {
 	 *
 	 * @return void
 	*/
-	pagination(page_param:number) {
-		let limits:number = 5;
-		this.pizzaCharger = false;
-		this.page_current = page_param;
-		page_param = page_param > 0 ? page_param : this.page_current;
-		this.http.get(urlApi + '/pizza/' + page_param + "/" + limits)
+	pagination(page_param:number, limits:number = 0) {
+		let is_paginate_allowed:boolean = true;
+
+		if (page_param == this.page_current && limits == 0)
+			is_paginate_allowed = false;
+
+		if(limits == 0)
+			limits = this.limits;
+		else
+			this.limits = limits;
+
+		// check if paginate is allowed
+		if (page_param == 0)
+			is_paginate_allowed = false;
+
+		if(is_paginate_allowed) {
+			this.pizzaCharger = false;
+			this.http.get(urlApi + '/pizza/1/' + page_param + "/" + limits)
 			.map(
 				(response) => response.json()
 			)
@@ -62,15 +79,28 @@ export class PizzaComponent implements OnInit {
 				(data) => {
 					this.pizzas = data.contain;
 					this.pizzaCharger = (data.contain.length > 0) ? true : false;
+					this.p_prev = data.p_prev;
+					this.p_next = data.p_next;
+					this.page_current = data.p_current;
+
+					this.paginate_show = (data.count > this.limits);
+
 					let page = [];
 					let max = Math.ceil(data.count / limits);
 					for (var i = 1; i <= max; ++i) {
 						page.push(i);
 					}
+
+					this.max_page = page.length;
 					this.paginate = page;
-					console.log(data, page, this.paginate);
+
+					if(page_param == 1)
+						this.p_prev = 0;
+					if(this.p_next > this.max_page)
+						this.p_next = 0;
 				}
 			)  	
+		}
 	}
 
 	supprimerPizza(pizza) {
