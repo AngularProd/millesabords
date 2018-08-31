@@ -156,7 +156,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/_layout/admin-header/admin-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"topbar\">\r\n    <nav class=\"navbar top-navbar navbar-toggleable-sm navbar-light\">\r\n        <!-- ============================================================== -->\r\n        <!-- Logo -->\r\n        <!-- ============================================================== -->\r\n        <div class=\"navbar-header\">\r\n            <a class=\"navbar-brand\" routerLink=\"/\" style=\"color: white; font-size: 30px;\">\r\n                <!-- Logo icon -->\r\n                <img \r\n                    src=\"assets/images/logo_bo-40.png\" \r\n                    alt=\"homepage\" \r\n                    class=\"light-logo\"\r\n                />\r\n                <b>\r\n                    <span class=\"light-logo\">\r\n                        Mille sabords\r\n                    </span>\r\n                    <!--You can put here icon as well // <i class=\"wi wi-sunset\"></i> //-->\r\n                    \r\n                    <!-- Light Logo icon -->\r\n                </b>\r\n                <!--End Logo icon -->\r\n                <!-- Logo text -->\r\n             </a>\r\n        </div>\r\n        <!-- ============================================================== -->\r\n        <!-- End Logo -->\r\n        <!-- ============================================================== -->\r\n        <div class=\"navbar-collapse\">\r\n            <!-- ============================================================== -->\r\n            <!-- toggle and nav items -->\r\n            <!-- ============================================================== -->\r\n            <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                <!-- This is  -->\r\n                <li class=\"nav-item\"> \r\n                    <a \r\n                        class=\"nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark\" href=\"javascript:void(0)\"\r\n                        (click)=\"menuShowHide()\"\r\n                    >\r\n                        <i class=\"mdi mdi-menu\"></i>\r\n                    </a> \r\n                </li>\r\n                <!-- ============================================================== -->\r\n                <!-- Search -->\r\n                <!-- ============================================================== -->\r\n                <!-- \r\n                    <li class=\"nav-item hidden-sm-down search-box\"> <a class=\"nav-link hidden-sm-down text-muted waves-effect waves-dark\" href=\"javascript:void(0)\"><i class=\"ti-search\"></i></a>\r\n                        <form class=\"app-search\">\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Search & enter\"> <a class=\"srh-btn\"><i class=\"ti-close\"></i></a> \r\n                        </form>\r\n                    </li>\r\n                -->\r\n            </ul>\r\n            <!-- ============================================================== -->\r\n            <!-- User profile and search -->\r\n            <!-- ============================================================== -->\r\n            <ul class=\"navbar-nav my-lg-0\">\r\n                <!-- ============================================================== -->\r\n                <!-- Profile -->\r\n                <!-- ============================================================== -->\r\n                <li class=\"nav-item dropdown\">\r\n                    <a \r\n                        class=\"nav-link dropdown-toggle text-muted waves-effect waves-dark\" \r\n                        data-toggle=\"dropdown\" \r\n                        aria-haspopup=\"true\" \r\n                        aria-expanded=\"false\"\r\n                    >\r\n                        <img \r\n                            src=\"assets/images/profil.png\" \r\n                            alt=\"utilisateur\" \r\n                            class=\"profile-pic m-r-10\"\r\n                        />\r\n                        Bonjour {{ user.prenom }}\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </nav>\r\n</header>"
+module.exports = "<header class=\"topbar\">\r\n    <nav class=\"navbar top-navbar navbar-toggleable-sm navbar-light\">\r\n        <!-- ============================================================== -->\r\n        <!-- Logo -->\r\n        <!-- ============================================================== -->\r\n        <div class=\"navbar-header\">\r\n            <a class=\"navbar-brand\" routerLink=\"/\" style=\"color: white; font-size: 30px;\">\r\n                <!-- Logo icon -->\r\n                <img \r\n                    src=\"assets/images/logo_bo-40.png\" \r\n                    alt=\"homepage\" \r\n                    class=\"light-logo\" style=\"display: none;\" \r\n                />\r\n                <b>\r\n                    <span class=\"light-logo\">\r\n                        Mille sabords\r\n                    </span>\r\n                    <!--You can put here icon as well // <i class=\"wi wi-sunset\"></i> //-->\r\n                    \r\n                    <!-- Light Logo icon -->\r\n                </b>\r\n                <!--End Logo icon -->\r\n                <!-- Logo text -->\r\n             </a>\r\n        </div>\r\n        <!-- ============================================================== -->\r\n        <!-- End Logo -->\r\n        <!-- ============================================================== -->\r\n        <div class=\"navbar-collapse\">\r\n            <!-- ============================================================== -->\r\n            <!-- toggle and nav items -->\r\n            <!-- ============================================================== -->\r\n            <ul class=\"navbar-nav mr-auto mt-md-0\">\r\n                <!-- This is  -->\r\n                <li class=\"nav-item\"> \r\n                    <a \r\n                        class=\"nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark\" href=\"javascript:void(0)\"\r\n                        (click)=\"menuShowHide()\"\r\n                    >\r\n                        <i class=\"mdi mdi-menu\"></i>\r\n                    </a> \r\n                </li>\r\n                <!-- ============================================================== -->\r\n                <!-- Search -->\r\n                <!-- ============================================================== -->\r\n                <!-- \r\n                    <li class=\"nav-item hidden-sm-down search-box\"> <a class=\"nav-link hidden-sm-down text-muted waves-effect waves-dark\" href=\"javascript:void(0)\"><i class=\"ti-search\"></i></a>\r\n                        <form class=\"app-search\">\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Search & enter\"> <a class=\"srh-btn\"><i class=\"ti-close\"></i></a> \r\n                        </form>\r\n                    </li>\r\n                -->\r\n            </ul>\r\n            <!-- ============================================================== -->\r\n            <!-- User profile and search -->\r\n            <!-- ============================================================== -->\r\n            <ul class=\"navbar-nav my-lg-0\">\r\n                <!-- ============================================================== -->\r\n                <!-- Profile -->\r\n                <!-- ============================================================== -->\r\n                <li class=\"nav-item dropdown\">\r\n                    <a \r\n                        class=\"nav-link dropdown-toggle text-muted waves-effect waves-dark\" \r\n                        data-toggle=\"dropdown\" \r\n                        aria-haspopup=\"true\" \r\n                        aria-expanded=\"false\"\r\n                    >\r\n                        <img \r\n                            src=\"assets/images/profil.png\" \r\n                            alt=\"utilisateur\" \r\n                            class=\"profile-pic m-r-10\"\r\n                        />\r\n                        Bonjour {{ user.prenom }}\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </nav>\r\n</header>"
 
 /***/ }),
 
@@ -953,8 +953,8 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["g" /* RouterModule 
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return urlApi; });
-var host = 'http://mividy.com/api/millesabords/web/app_dev.php';
-//const host = 'http://localhost:8000';
+// const host = 'http://mividy.com/api/millesabords/web/app_dev.php';
+var host = 'http://localhost:8000';
 var urlApi = host;
 
 
@@ -1260,12 +1260,12 @@ var DessertComponent = /** @class */ (function () {
     }
     DessertComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/dessert';
+        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/dessert/0';
         this.http.get(url)
             .map(function (response) { return response.json(); })
             .subscribe(function (data) {
-            _this.desserts = data;
-            _this.dessertsCharger = (data.length > 0) ? true : false;
+            _this.desserts = data.contain;
+            _this.dessertsCharger = (data.contain.length > 0) ? true : false;
         });
     };
     DessertComponent = __decorate([
@@ -1404,12 +1404,12 @@ var menuComponent = /** @class */ (function () {
     }
     menuComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/menu';
+        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/menu/0';
         this.http.get(url)
             .map(function (response) { return response.json(); })
             .subscribe(function (data) {
-            _this.menus = data;
-            _this.menusCharger = (data.length > 0) ? true : false;
+            _this.menus = data.contain;
+            _this.menusCharger = (data.contain.length > 0) ? true : false;
         });
     };
     menuComponent = __decorate([
@@ -1662,12 +1662,12 @@ var PizzaComponent = /** @class */ (function () {
     }
     PizzaComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/pizza';
+        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/pizza/0';
         this.http.get(url)
             .map(function (response) { return response.json(); })
             .subscribe(function (data) {
-            _this.pizzas = data;
-            _this.pizzasCharger = (data.length > 0) ? true : false;
+            _this.pizzas = data.contain;
+            _this.pizzasCharger = (_this.pizzas.length > 0) ? true : false;
         });
     };
     PizzaComponent = __decorate([
@@ -1737,12 +1737,12 @@ var PlatComponent = /** @class */ (function () {
     }
     PlatComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/plat';
+        var url = __WEBPACK_IMPORTED_MODULE_2__config_host__["a" /* urlApi */] + '/plat/0';
         this.http.get(url)
             .map(function (response) { return response.json(); })
             .subscribe(function (data) {
-            _this.plats = data;
-            _this.platsCharger = (data.length > 0) ? true : false;
+            _this.plats = data.contain;
+            _this.platsCharger = (data.contain.length > 0) ? true : false;
         });
     };
     PlatComponent = __decorate([

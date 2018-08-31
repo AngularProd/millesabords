@@ -15,14 +15,33 @@ class PlatdujourController extends Controller {
 
     /**
      * @Rest\View()
-     * @Rest\Get("/platdujour")
+     * @Rest\Get("/platdujour/{paginate}/{page}/{limit}")
      */
-    public function getplatdujourAction(Request $request) {
-        $Boisson = $this->get('doctrine.orm.entity_manager')
+    public function getPizzaAction(Request $request, $paginate = 1, $page = 1, $limit = 5) {
+        $Menu = $this->get('doctrine.orm.entity_manager')
                 ->getRepository('AppBundle:Platdujour4')
-                ->findAll();
+                ->createQueryBuilder('v');
 
-        return $Boisson;
+        if ($paginate) {
+            $Menu_clone = clone($Menu);
+            $lists['count'] = (int) $Menu->select('COUNT(v) as list')->getQuery()->getResult()[0]['list'];
+
+            // Check offset to be valid
+            $limit = (int) $limit;
+            $page = (int) $page;
+            $page = ($page > 0 && $page <= ceil($lists['count'] / $limit)) ? $page : 1;
+            $offset = ($page * $limit) - $limit;
+
+            $lists['contain'] = $Menu_clone->setFirstResult($offset)->setMaxResults($limit)->getQuery()->getResult();
+
+            $lists['p_current'] = $page;
+            $lists['p_prev'] = $page - 1 < 0 ? $page : $page - 1;
+            $lists['p_next'] = $page + 1 > $lists['contain'] ? $page : $page + 1;
+        } else {
+            $lists['contain'] = $Menu->getQuery()->getResult();
+        }
+
+        return $lists;
     }
 
     /**

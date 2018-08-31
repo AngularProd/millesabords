@@ -17,15 +17,15 @@ export class DessertComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		let url = urlApi + '/dessert';
+		let url = urlApi + '/dessert/0';
 		this.http.get(url)
 			.map(
 				(response) => response.json()
 			)
 			.subscribe(
 				(data) => {
-					this.desserts = data;
-					this.dessertsCharger = (data.length > 0) ? true : false;
+					this.desserts = data.contain;
+					this.dessertsCharger = (data.contain.length > 0) ? true : false;
 
 				}
 			);			
