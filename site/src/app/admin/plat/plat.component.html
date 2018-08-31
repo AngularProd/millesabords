@@ -44,8 +44,17 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
-            <div class="card-block bg-info">
+            <div class="card-block bg-info d-flex">
                 <h4 class="text-white card-title">Liste des plats</h4>
+                <div class="paginate-limit">
+                    Afficher par 
+                    <select (change)="pagination(page_current, $event.target.value)">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
             </div>              
             <div class="card-block">
                 <div id="overlay" *ngIf="!platsCharger;">
@@ -88,6 +97,13 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="card-block bg-info" *ngIf="paginate_show">
+                <ul class="paginate-ul d-flex">
+                    <li class="paginate-li{{p_prev == 0 ? ' disable' : ''}}" (click)="pagination(p_prev)"><i class="mdi mdi-step-backward"></i></li>
+                    <li class="paginate-li{{ page_current == page ? ' current' : '' }}" *ngFor="let page of paginate" (click)="pagination(page)">{{page}}</li>
+                    <li class="paginate-li{{p_next == 0 ? ' disable' : ''}}" (click)="pagination(p_next)"><i class="mdi mdi-step-forward"></i></li>
+                </ul>
             </div>
         </div>
     </div>

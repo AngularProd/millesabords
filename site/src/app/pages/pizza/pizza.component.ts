@@ -17,15 +17,15 @@ export class PizzaComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		let url = urlApi + '/pizza';
+		let url = urlApi + '/pizza/0';
 		this.http.get(url)
 			.map(
 				(response) => response.json()
 			)
 			.subscribe(
 				(data) => {
-					this.pizzas = data;
-					this.pizzasCharger = (data.length > 0) ? true : false;
+					this.pizzas = data.contain;
+					this.pizzasCharger = (this.pizzas.length > 0) ? true : false;
 				}
 			);			
 	}
